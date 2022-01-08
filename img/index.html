@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Jquery  ui -->
+    <link rel="stylesheet" href="./css/jquery-ui.css" />
+    <link rel="stylesheet" href="./css/input-range.css" />
+    <link rel="stylesheet" href="./css/countrySelect.min.css" />
+    <link rel="stylesheet" href="./css/country-input.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>VPSCompare</title>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <h1 class="main-logo"><span>VPS</span>Compare.pro</h1>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="./faq.html">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="ads">
+        <div class="container">
+          <div class="banner-lg">
+            <img class="img-fluid" src="img/headerBanner-lg.png" alt="ad" />
+          </div>
+          <div style="display: none" class="banner-sm">
+            <img class="img-fluid" src="img/headerBanner-sm.png" alt="ad" />
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Landing -->
+    <div id="landing">
+      <div class="container">
+        <div class="row-container">
+          <div class="row-one">
+            <div class="row justify-content-between g-5">
+              <div class="col-md-6 col-lg-3">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-6">
+                    <h2>RAM Size</h2>
+                  </div>
+                  <div class="col-6 text-end">
+                    <h3 id="ram-min"></h3>
+                    <h3>-</h3>
+                    <h3 id="ram-max"></h3>
+                  </div>
+                  <div class="col-12 rng">
+                    <div id="ram-range"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-6">
+                    <h2>Disk Size</h2>
+                  </div>
+                  <div class="col-6 text-end">
+                    <h3 id="disk-min"></h3>
+                    <h3>-</h3>
+                    <h3 id="disk-max"></h3>
+                  </div>
+                  <div class="col-12 rng">
+                    <div id="disk-range"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <h2>Disk Type</h2>
+                <div>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Select</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-6">
+                    <h2>CPU Core Count</h2>
+                  </div>
+                  <div class="col-6 text-end">
+                    <h3 id="cpu-min"></h3>
+                    <h3>-</h3>
+                    <h3 id="cpu-max"></h3>
+                  </div>
+                  <div class="col-12 rng">
+                    <div id="cpu-range"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="second-row">
+            <div class="row justify-content-between g-5">
+              <div class="col-md-6 col-lg-3">
+                <div class="country-container">
+                  <h2>Country</h2>
+                </div>
+
+                <div class="form-item">
+                  <input id="country_selector" type="text" />
+                  <label for="country_selector" style="display: none"
+                    >Select a country here...</label
+                  >
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <h2>Disk Type</h2>
+                <div>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Select</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <h2>Payment Options</h2>
+                <div>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Select</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="crypto">
+                  <div class="col-12">
+                    <h2>Crypto Friendly</h2>
+                  </div>
+                  <div class="radio-input-container">
+                    <label class="radio-input">
+                      <input type="radio" name="radio" />
+                      <span>Yes</span>
+                    </label>
+                    <label class="radio-input">
+                      <input type="radio" name="radio" />
+                      <span>No</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr class="hr-two" />
+          <div class="third-row">
+            <div class="row justify-content-between g-5">
+              <div class="col-md-6 col-lg-3">
+                <h2>Disk Type</h2>
+                <div>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Select</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-6">
+                    <h2>Price <span>(monthly)</span></h2>
+                  </div>
+                  <div class="col-6 text-end">
+                    <h3 id="price-min"></h3>
+                    <h3>-</h3>
+                    <h3 id="price-max"></h3>
+                  </div>
+                  <div class="col-12 rng">
+                    <div id="price-range"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <h2>Disk Type</h2>
+                <div>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option selected>Select</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <div class="landing-btn">
+                  <a href="">Search</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Landing -->
+    <!-- Start pages -->
+    <div id="pages">
+      <div class="container">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-12">
+            <h1>Lorem Ipsum</h1>
+          </div>
+          <div class="col-6 col-lg-2 pb-4 pb-lg-0">
+            <div class="drop-down-number d-flex align-items-center">
+              <span>View</span>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>1</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div
+            class="col-12 col-lg-7 order-3 order-lg-0 pt-4 pb-lg-0 border-sm"
+          >
+            <div class="list-container">
+              <ul class="d-flex align-items-center justify-content-center">
+                <li>
+                  <div class="arrow-left">
+                    <a href=""><img src="img/triangle-left 1.svg" alt="" /></a>
+                  </div>
+                </li>
+                <li class=""><a class="active" href="">1</a></li>
+                <li><a href="">2</a></li>
+                <li><a href="">3</a></li>
+                <li><a href="">...</a></li>
+                <li><a href="">11</a></li>
+                <li><a href="">12</a></li>
+                <li><a href="">13</a></li>
+                <li>
+                  <div class="arrow-right">
+                    <a href=""><img src="img/triangle-right 1.svg" alt="" /></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3 pb-4 pb-lg-0">
+            <div
+              class="page-number d-flex justify-content-end align-items-center"
+            >
+              <span>Go to page</span>
+              <input class="form-control" type="text" />
+              <a href="#">Go</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Table  -->
+
+    <div id="table">
+      <div class="container">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">COMPANY <i class="bx bx-caret-down"></i></th>
+                <th scope="col">DISK <i class="bx bx-caret-down"></i></th>
+                <th scope="col">MEMORY <i class="bx bx-caret-down"></i></th>
+                <th scope="col">CPU <i class="bx bx-caret-down"></i></th>
+                <th scope="col">TRAFFIC <i class="bx bx-caret-down"></i></th>
+                <th scope="col">PRICE <i class="bx bx-caret-down"></i></th>
+                <th scope="col">
+                  CRYPTO FRIENDLY <i class="bx bx-caret-down"></i>
+                </th>
+                <th scope="col">COUNTRY</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="fix-hight-row"></tr>
+              <tr>
+                <td>
+                  <div class="table-image-container">
+                    <img
+                      class="table-img img-fluid"
+                      src="img/logoipsum-logo-12 1.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>250 GB SSD</td>
+                <td>4096 MB</td>
+                <td>8x2600 MHz</td>
+                <td>100 Mbit / s</td>
+                <td>₽5,000</td>
+                <td class="text-center">Yes</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="img-container me-3">
+                      <img src="img/Russia2.png" alt="" />
+                    </div>
+                    <span>Russia</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-image-container">
+                    <img
+                      class="table-img img-fluid"
+                      src="img/logoipsum-logo-30 1.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>250 GB SSD</td>
+                <td>5042 MB</td>
+                <td>8x3300 MHz</td>
+                <td>1000 Mbit / s</td>
+                <td>€3,000</td>
+                <td class="text-center">No</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="img-container me-3">
+                      <img src="img/Ireland.png" alt="" />
+                    </div>
+                    <span>Ireland</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-image-container">
+                    <img
+                      class="table-img img-fluid"
+                      src="img/logoipsum-logo-44.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>250 GB SSD</td>
+                <td>2000 MB</td>
+                <td>8x2600 MHz</td>
+                <td>100 Mbit / s</td>
+                <td>€2,300</td>
+                <td class="text-center">Yes</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="img-container me-3">
+                      <img src="img/United-Kingdom (2).png" alt="" />
+                    </div>
+                    <span>United Kingdom</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-image-container">
+                    <img
+                      class="table-img img-fluid"
+                      src="img/logoipsum-logo-47.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>250 GB SSD</td>
+                <td>5042 MB</td>
+                <td>8x3300 MHz</td>
+                <td>1000 Mbit / s</td>
+                <td>$3,000</td>
+                <td class="text-center">No</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="img-container me-3">
+                      <img src="img/United-States (1).png" alt="" />
+                    </div>
+                    <span>United States</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-image-container">
+                    <img
+                      class="table-img img-fluid"
+                      src="img/logoipsum-logo-49.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>250 GB SSD</td>
+                <td>4096 MB</td>
+                <td>8x2600 MHz</td>
+                <td>100 Mbit / s</td>
+                <td>₽5,000</td>
+                <td class="text-center">Yes</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="img-container me-3">
+                      <img src="img/Russia2.png" alt="" />
+                    </div>
+                    <span>Russia</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-image-container">
+                    <img
+                      class="table-img img-fluid"
+                      src="img/logoipsum-logo-17 1.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>250 GB SSD</td>
+                <td>5042 MB</td>
+                <td>8x3300 MHz</td>
+                <td>1000 Mbit / s</td>
+                <td>$3,000</td>
+                <td class="text-center">No</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="img-container me-3">
+                      <img src="img/Brazil (1).png" alt="" />
+                    </div>
+                    <span>Brazil</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-image-container">
+                    <img
+                      class="table-img img-fluid"
+                      src="img/logoipsum-logo-50 1.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>250 GB SSD</td>
+                <td>2000 MB</td>
+                <td>8x2600 MHz</td>
+                <td>100 Mbit / s</td>
+                <td>€2,300</td>
+                <td class="text-center">Yes</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="img-container me-3">
+                      <img src="img/United-Kingdom (2).png" alt="" />
+                    </div>
+                    <span>United Kingdom</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-image-container">
+                    <img
+                      class="table-img img-fluid"
+                      src="img/logoipsum-logo-45 1.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>250 GB SSD</td>
+                <td>5042 MB</td>
+                <td>8x3300 MHz</td>
+                <td>1000 Mbit / s</td>
+                <td>€3,000</td>
+                <td class="text-center">No</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="img-container me-3">
+                      <img src="img/Sweden (1).png" alt="" />
+                    </div>
+                    <span>Sweden</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-image-container">
+                    <img
+                      class="table-img img-fluid"
+                      src="img/logoipsum-logo-48.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>250 GB SSD</td>
+                <td>2000 MB</td>
+                <td>8x2600 MHz</td>
+                <td>100 Mbit / s</td>
+                <td>€2,300</td>
+                <td class="text-center">Yes</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="img-container me-3">
+                      <img src="img/United-Kingdom (2).png" alt="" />
+                    </div>
+                    <span>United Kingdom</span>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="table-image-container">
+                    <img
+                      class="table-img img-fluid"
+                      src="img/logoipsum-logo-gen1 1.png"
+                      alt=""
+                    />
+                  </div>
+                </td>
+                <td>250 GB SSD</td>
+                <td>5042 MB</td>
+                <td>8x3300 MHz</td>
+                <td>1000 Mbit / s</td>
+                <td>€3,000</td>
+                <td class="text-center">No</td>
+                <td>
+                  <div class="d-flex align-items-center">
+                    <div class="img-container me-3">
+                      <img src="img/Norway (1).png" alt="" />
+                    </div>
+                    <span>Norway</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer>
+      <div class="container">
+        <div class="banner-lg">
+          <img class="img-fluid" src="img/footerBanner-lg.png" alt="ad" />
+        </div>
+        <div style="display: none" class="banner-sm">
+          <img class="img-fluid" src="img/footerBanner-sm.png" alt="ad" />
+        </div>
+        <hr />
+        <div class="rights">
+          <div class="row">
+            <div class="col-10">
+              <a href="#">
+                <h1 class="main-logo"><span>VPS</span>Compare.pro</h1>
+              </a>
+            </div>
+            <div class="col-2">
+              <a class="img-holder d-flex justify-content-center" href="#">
+                <img src="img/up.svg" alt="up" />
+              </a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-10">
+              <p>© 2022 All Rights Reserved</p>
+            </div>
+            <div class="col-2">
+              <span class="up-btn d-flex justify-content-center"
+                >Back to top</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- scripts -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/jquery-ui.js"></script>
+    <script src="./js/range-inputs.js"></script>
+    <script src="./js/countrySelect.min.js"></script>
+    <script src="./js/country-input.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
